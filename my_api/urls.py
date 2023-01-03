@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app_api.views import home
+from app_api.views import index, index_details, upload, update,delete_details
+
+# , index_detail,upload
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', index),
+    path('<int:pk>/', index_details),
+    path('upload/', upload),
+    path('<int:pk>/update/', update),   
+   
 ]
